@@ -73,7 +73,7 @@ const RootLayoutPage = ({ children }) => {
             <li tabIndex={0}>
               <details>
                 <summary>Categories</summary>
-                <ul className="p-2 w-36">{menuList}</ul>
+                <ul className="p-2 w-36 z-50">{menuList}</ul>
               </details>
             </li>
             <li>
