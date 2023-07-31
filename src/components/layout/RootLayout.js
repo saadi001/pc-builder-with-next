@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const RootLayoutPage = ({ children }) => {
   const menuList = (
     <>
@@ -61,7 +63,7 @@ const RootLayoutPage = ({ children }) => {
               </li>
             </ul>
           </div>
-          <a className="font-bold text-xl sm:ml-5 px-2 cursor-pointer">Banan</a>
+          <Link href={'/'} className="font-bold text-xl sm:ml-5 px-2 cursor-pointer">Banan</Link>
         </div>
         <div className="navbar-center hidden lg:flex ">
           <ul className="menu menu-horizontal px-1">
