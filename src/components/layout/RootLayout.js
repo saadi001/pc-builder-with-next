@@ -73,7 +73,7 @@ const RootLayoutPage = ({ children }) => {
           </div>
           <Link
             href={"/"}
-            className="font-bold text-xl sm:ml-5 px-2 cursor-pointer"
+            className="font-bold text-xl sm:ml-5 px-2 cursor-pointer text-yellow-600"
           >
             Banan
           </Link>
@@ -147,3 +147,4 @@ const RootLayoutPage = ({ children }) => {
 };
 
 export default RootLayoutPage;
+
