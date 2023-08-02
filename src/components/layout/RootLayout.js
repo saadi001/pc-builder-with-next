@@ -1,6 +1,14 @@
 import Link from "next/link";
+import profileImage from "../../assets/image/profile.png";
+import Image from "next/image";
+import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
+import "@szhsin/react-menu/dist/index.css";
+import "@szhsin/react-menu/dist/transitions/slide.css";
+import { signOut, useSession } from "next-auth/react";
 
 const RootLayoutPage = ({ children }) => {
+  const { data: session } = useSession();
+
   const menuList = (
     <>
       <li>
@@ -27,7 +35,7 @@ const RootLayoutPage = ({ children }) => {
     </>
   );
   return (
-    <div>
+    <div className="min-h-screen">
       <div className="navbar bg-gray-500/5 ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -59,11 +67,16 @@ const RootLayoutPage = ({ children }) => {
                 <ul className="p-2 w-36">{menuList}</ul>
               </li>
               <li>
-                <Link href={'/blogs'}>Blogs</Link>
+                <Link href={"/blogs"}>Blogs</Link>
               </li>
             </ul>
           </div>
-          <Link href={'/'} className="font-bold text-xl sm:ml-5 px-2 cursor-pointer">Banan</Link>
+          <Link
+            href={"/"}
+            className="font-bold text-xl sm:ml-5 px-2 cursor-pointer"
+          >
+            Banan
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex ">
           <ul className="menu menu-horizontal px-1">
@@ -77,20 +90,58 @@ const RootLayoutPage = ({ children }) => {
               </details>
             </li>
             <li>
-              <Link href={'/blogs'}>Blogs</Link>
+              <Link href={"/blogs"}>Blogs</Link>
             </li>
           </ul>
         </div>
         <div className="navbar-end sm:mr-5 mr-1">
-          <div className="flex gap-2">
-            <a className="btn bg-orange-500 hover:bg-orange-400">PC Builder</a>
-            <button>acc</button>
+          <div className="flex gap-4">
+            <Link
+              href={"/pcBuilder"}
+              className="btn bg-orange-500 hover:bg-orange-400"
+            >
+              PC Builder
+            </Link>
+            <Menu
+              menuButton={
+                <MenuButton>
+                  {session?.user ? (
+                    <Image
+                      src={session?.user?.image}
+                      alt="profileImage"
+                      width={25}
+                      height={25}
+                      className="rounded-full"
+                    ></Image>
+                  ) : (
+                    <Image
+                      src={profileImage}
+                      width={25}
+                      height={25}
+                      alt="profileImage"
+                      className="hover:opacity-70"
+                    ></Image>
+                  )}
+                </MenuButton>
+              }
+              transition
+            >
+              {session?.user ? (
+                <>
+                  <MenuItem href="/profile">Profile</MenuItem>
+                  <MenuItem onClick={() => signOut()}>Log out</MenuItem>
+                </>
+              ) : (
+                <>
+                  <MenuItem href="/login">Login</MenuItem>
+                  <MenuItem>Sign up</MenuItem>
+                </>
+              )}
+            </Menu>
           </div>
         </div>
       </div>
-      <div>
-        {children}
-      </div>
+      <div>{children}</div>
     </div>
   );
 };
