@@ -52,14 +52,14 @@ const RootLayoutPage = ({ children }) => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box"
             >
               <li>
-                <a>Home</a>
+                <Link href={"/"}>Home</Link>
               </li>
               <li>
                 <a>Categories</a>
                 <ul className="p-2 w-36">{menuList}</ul>
               </li>
               <li>
-                <a>Blogs</a>
+                <Link href={'/blogs'}>Blogs</Link>
               </li>
             </ul>
           </div>
@@ -68,7 +68,7 @@ const RootLayoutPage = ({ children }) => {
         <div className="navbar-center hidden lg:flex ">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Home</a>
+              <Link href={"/"}>Home</Link>
             </li>
             <li tabIndex={0}>
               <details>
@@ -77,7 +77,7 @@ const RootLayoutPage = ({ children }) => {
               </details>
             </li>
             <li>
-              <a>Blogs</a>
+              <Link href={'/blogs'}>Blogs</Link>
             </li>
           </ul>
         </div>

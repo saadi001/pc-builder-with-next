@@ -12,7 +12,7 @@ const FeaturedProductPage = ({ products }) => {
         >
           <Image
             src={product?.featuredProduct?.image}
-            responsive
+            responsive="true"
             alt="product"
             width={500}
             height={200}

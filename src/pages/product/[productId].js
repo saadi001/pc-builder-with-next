@@ -5,7 +5,7 @@ import Link from "next/link";
 const ProductsPage = ({ product }) => {
   const productDetails = product[0];
   return (
-    <div className="mx-3 md:mx-8 lg:mx-12 xl:mx-16 2xl:max-w-[1300px] 2xl:mx-auto grid grid-cols-3 gap-4 mt-8 ">
+    <div className="mx-3 md:mx-8 lg:mx-12 xl:mx-16 2xl:max-w-[1300px] 2xl:mx-auto grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8 ">
       {productDetails?.products?.map((product, i) => (
         <Link
           key={i}
@@ -14,7 +14,7 @@ const ProductsPage = ({ product }) => {
         >
           <Image
             src={product?.image}
-            responsive
+            responsive="true"
             alt="product"
             width={500}
             height={200}
@@ -63,15 +63,4 @@ export const getStaticProps = async (context) => {
     },
   };
 };
-// export const getServerSideProps = async (context) => {
-//   const { params } = context;
-//   const res = await fetch(
-//     `https://assingment-6-server.vercel.app/products/${params.productId}`
-//   );
-//   const data = await res.json();
-//   return {
-//     props: {
-//       product: data,
-//     },
-//   };
-// };
+
