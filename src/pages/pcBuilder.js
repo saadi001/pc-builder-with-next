@@ -23,8 +23,8 @@ const pcBuilderPage = ({ products }) => {
                   <Image src={product?.featuredProduct?.icon} alt="image" responsive="true" width={50} height={50}></Image>
                 </div>
                 <div className="col-span-8 ">
-                  <p>{product?.Category}</p>
-                  <p>cpu</p>
+                  <p className="text-sm">{product?.Category}</p>
+                  <p className="font-bold">click choose to pick specific component</p>
                 </div>
                 <div className="col-span-2  flex justify-end items-center">
                   <Link href={`/pcBuilder/${product.id}`} className="px-5 py-2 bg-yellow-400 rounded-md">

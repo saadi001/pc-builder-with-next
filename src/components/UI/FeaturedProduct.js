@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const FeaturedProductPage = ({ products }) => {
   return (
-    <div className="pt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+    <div className="pt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-3">
       {products?.map((product, i) => (
         <Link
           key={i}

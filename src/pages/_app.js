@@ -1,3 +1,4 @@
+import { MyContext } from "@/contexts/contextProvider";
 import "@/styles/globals.css";
 import { SessionProvider } from "next-auth/react";
 
@@ -7,7 +8,7 @@ export default function MyApp({ Component, pageProps }) {
 
   return (
     <SessionProvider session={pageProps.session}>
-      {getLayout(<Component {...pageProps} />)}
+     <MyContext>{getLayout(<Component {...pageProps} />)}</MyContext>
     </SessionProvider>
   );
 }
