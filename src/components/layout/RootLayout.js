@@ -5,6 +5,7 @@ import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import { signOut, useSession } from "next-auth/react";
+import FooterPage from "../UI/footer";
 
 const RootLayoutPage = ({ children }) => {
   const { data: session } = useSession();
@@ -12,26 +13,23 @@ const RootLayoutPage = ({ children }) => {
   const menuList = (
     <>
       <li>
-        <a>CPU / Processor</a>
+        <Link href={"/product/1"}>CPU / Processor</Link>
       </li>
       <li>
-        <a>Motherboard</a>
+        <Link href={"/product/2"}>Motherboard</Link>
       </li>
       <li>
-        <a>RAM</a>
+        <Link href={"/product/3"}>RAM</Link>
       </li>
       <li>
-        <a>Power Supply Unit</a>
+        <Link href={"/product/4"}>Power Supply Unit</Link>
       </li>
       <li>
-        <a>Storage Device</a>
+        <Link href={"/product/5"}>Storage Device</Link>
       </li>
       <li>
-        <a>Monitor</a>
-      </li>
-      <li>
-        <a>GPU</a>
-      </li>
+        <Link href={"/product/6"}>Monitor</Link>
+      </li>     
     </>
   );
   return (
@@ -141,7 +139,8 @@ const RootLayoutPage = ({ children }) => {
           </div>
         </div>
       </div>
-      <div>{children}</div>
+      <>{children}</>
+      <FooterPage></FooterPage>
     </div>
   );
 };
