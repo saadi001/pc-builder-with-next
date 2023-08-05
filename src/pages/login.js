@@ -13,7 +13,7 @@ const loginPage = () => {
       <div className="flex gap-5">
         <div
           onClick={() =>
-            signIn("google", { callbackUrl: "http://localhost:3000/" })
+            signIn("google", { callbackUrl: "https://pcbanan.vercel.app/" })
           }
           className="border px-8 py-5 rounded-md bg-slate-300/10 hover:bg-slate-300/20 cursor-pointer"
         >
@@ -21,7 +21,7 @@ const loginPage = () => {
         </div>
         <div
           onClick={() =>
-            signIn("github", { callbackUrl: "http://localhost:3000/" })
+            signIn("github", { callbackUrl: "https://pcbanan.vercel.app/" })
           }
           className="border px-8 py-5 rounded-md bg-slate-300/10 hover:bg-slate-300/20 cursor-pointer"
         >

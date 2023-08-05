@@ -2,9 +2,9 @@ import RootLayoutPage from "@/components/layout/RootLayout";
 
 const blogsPage = () => {
     return (
-        <div className="">
+        <>
            this is blog page
-        </div>
+        </>
     );
 };
 
